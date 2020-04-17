@@ -123,6 +123,7 @@ body {
     //     transition-delay: 0s;
     // }
 
+    // COLOURS
     $purple: #C5A5CB;
     $green: #7cf972;
     $orange: #F4C891;
