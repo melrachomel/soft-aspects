@@ -16,7 +16,7 @@
   </div>
 
 
-  <div class="prices block tan-bg" v-draggable>
+  <div class="prices block green-bg" v-draggable>
     <h1>Prices</h1>
     <p>1 hour <br />
       Sliding scale $40 - $65</p>
@@ -124,7 +124,7 @@ body {
     // }
 
     $purple: #C5A5CB;
-    $tan: #7cf972;
+    $green: #7cf972;
     $orange: #F4C891;
     $red: #f05656;
 
@@ -189,8 +189,8 @@ body {
         background: $purple;
     }
 
-    .tan-bg {
-        background: $tan;
+    .green-bg {
+        background: $green;
     }
 
     .orange-bg {
