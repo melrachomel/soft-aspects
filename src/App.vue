@@ -2,22 +2,13 @@
 <div id="app">
   <img alt="Soft Aspects logo" id="site-logo" src="./assets/logo.png" v-draggable>
 
-  <div class="about block purple-bg" v-draggable>
-    <h1>About</h1>
-    <p>Soft Aspects is the astrology practice + project of Amelia Ehrhardt</p>
-
-    <p>I offer chart readings, transit (forecast) readings, and relationship readings. My focus is on using astrology as a source of empathy for ourselves, and for strengthening our emotional capacity. I believe that astrology’s unique ability to
-      accurately describe the human psyche offers an opportunity for us to take greater responsibility for our words and actions. I am particularly interested in astrology as a descriptor of the psychological weather we are collectively facing.</p>
-
-    <p>My astrological work is informed by my ongoing artistic practice as a choreographer, regular research, and my extensive study with Toronto-based astrologer Julia Beyer.</p>
-
-    <a href="mailto:ehrhardta@gmail.com">Email me</a>
-
-  </div>
+  <about></about>
 
 
   <div class="prices block green-bg" v-draggable>
     <h1>Prices</h1>
+
+    <!-- <p v-html="info"></p> -->
     <p>1 hour <br />
       Sliding scale $40 - $65</p>
 
@@ -39,14 +30,12 @@
     <span><em><a href="https://www.instagram.com/soft_aspects/">@soft_aspects</a></em></span>
   </div>
 
-  <!-- <div class="blog  block orange-bg" v-draggable>
+  <div class="blog block orange-bg" v-draggable>
     <h1>Astro blog</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
       officia deserunt mollit anim id est laborum.</p>
-
-
-  </div> -->
+  </div>
 
   <div class="video block" v-draggable>
     <div class="handler" :ref="handleId">
@@ -59,23 +48,28 @@
 
 <script>
 // import drag from '@branu-jp/v-drag'
+import about from './components/About'
+// import axios from 'axios'
 import {
   Draggable
 } from 'draggable-vue-directive'
 
 export default {
   name: 'app',
+  components: {
+    about
+  },
   directives: {
     // drag,
     Draggable,
-
   },
   data() {
     return {
       handleId: "handle-id",
       draggableValue: {
         handle: undefined
-      }
+      },
+      info: null
     };
   },
   mounted() {
@@ -83,6 +77,11 @@ export default {
     // let galleryScript = document.createElement('script')
     // galleryScript.setAttribute('src', 'https://www.instagram.com/embed.js')
     // document.head.appendChild(galleryScript)
+
+    // axios
+    //   .get('http://localhost/cms/wp-json/wp/v2/pages?_fields=author,id,excerpt,content,title,link')
+    //   .then(response => (this.info = response))
+
   }
 }
 </script>
