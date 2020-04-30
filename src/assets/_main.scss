@@ -1,0 +1,144 @@
+
+//COMMON BREAKPOINTS
+$mobile: 768px;
+$laptop: 1366px;
+$desktop: 1680px;
+
+// COLOURS
+$purple: #C5A5CB;
+$green: #7cf972;
+$orange: #F4C891;
+$red: #f05656;
+
+.clearfix {
+    overflow: auto;
+    clear: none;
+    width: 100%;
+}
+
+// TRANSITION EVERYTHING
+// * {
+//     transition: all 0.1s ease-in;
+//     transition-property: all;
+//     transition-duration: 250ms;
+//     transition-timing-function: ease-in;
+//     transition-delay: 0s;
+// }
+
+//CURSOR
+body {
+    margin: 0;
+    // cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewport='0 0 128 128' style='fill:black;font-size:68px;'><text y='50%'>🌛</text></svg>") 16 0,auto;
+    /*!emojicursor.app*/
+}
+
+#site-logo {
+    position: absolute;
+    z-index: 9999;
+    // max-width: 500px;
+}
+
+#app {
+    font-family: serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    background: #E6EA6B;
+    background: rgb(230,234,107);
+    background: linear-gradient(90deg, rgba(230,234,107,1) 0%, rgba(247,251,123,1) 18%, rgba(255,255,255,1) 100%);
+    height: 100vh;
+}
+
+.block {
+    position: absolute;
+    padding: 30px;
+    color: white;
+}
+
+//PAGES
+.about {
+    max-width: 25%;
+    top: 10%;
+    left: 20%;
+    z-index: 200;
+}
+
+.prices {
+    max-width: 25%;
+    top: 20%;
+    left: 30%;
+    z-index: 150;
+}
+
+.ig {
+    top: 40%;
+    z-index: 9999;
+    opacity: 0.65;
+    span {
+        font-size: 5em;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+.blog {
+    max-width: 25%;
+    top: 30%;
+    z-index: 100;
+}
+
+.video {
+    z-index: 50;
+    top: 40%;
+    left: 50%;
+
+    .handler {
+        position: absolute;
+        width: 640px;
+        height: 310px;
+    }
+}
+//END PAGES
+
+//BACKGROUNDS
+.purple-bg {
+    background: $purple;
+}
+
+.green-bg {
+    background: $green;
+}
+
+.orange-bg {
+    background: $orange;
+}
+
+.red-bg {
+    background: $red;
+}
+//END BACKGROUNDS
+
+//TYPOGRAPHY
+h1,
+h2 {
+    font-weight: normal;
+}
+p {
+    font-size: 1.25em;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+a {
+    color: #42b983;
+}

@@ -1,6 +1,8 @@
 <template>
 <div>
-  <div class="about block purple-bg" v-draggable>
+  <span>{{windowWidthDetector}}</span>
+
+  <div class="about block purple-bg" v-draggable="draggableValue_off_about">
     <h1 v-if="info" v-html="postTitle"></h1>
     <div v-if="info" v-html="postContent"></div>
 
@@ -9,7 +11,6 @@
 </template>
 
 <script>
-// import drag from '@branu-jp/v-drag'
 import axios from 'axios'
 import {
   Draggable
@@ -21,22 +22,30 @@ export default {
 
   },
   directives: {
-    // drag,
     Draggable,
   },
   data() {
     return {
-      handleId: "handle-id",
-      draggableValue: {
-        handle: undefined
-      },
       info: null,
+      draggableValue_off_about: {
+        stopDragging: undefined,
+      },
+      // draggable: true,
+      windowWidth: 0,
+      windowHeight: 0,
     };
   },
+  created() {
+    console.log("~~~Vue lifecycle: created()~~~")
+    //init
+    this.getWindowWidth()
+    this.getWindowHeight()
+  },
   mounted() {
-    this.draggableValue.handle = this.$refs[this.handleId];
     const apiUrl = "http://soft-aspects-cms.soft-aspects.net/?rest_route=/wp/v2/pages"
-    axios.get(apiUrl, { crossdomain: true })
+    axios.get(apiUrl, {
+        crossdomain: true
+      })
       .then(response => {
         const posts = response.data
         const sampleId = 5
@@ -47,13 +56,40 @@ export default {
         })
         // console.log(this.info[0].title.rendered)
       })
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.getWindowWidth)
+      window.addEventListener('resize', this.getWindowHeight)
+    })
   },
   computed: {
+    windowWidthDetector: function() {
+      if (this.windowWidth < 768) {
+        // do a loop
+        // const els = document.querySelectorAll(".block");
+        // for (var i = 0; i < els.length; i++) {
+        //   // console.log(els[i]);
+        // }
+        this.draggableValue_off_about.stopDragging = true
+        console.log(true, "window is LESS than 768")
+      } else {
+        this.draggableValue_off_about.stopDragging = false
+        console.log(false, "window is GREATER than 768")
+      }
+    },
     postTitle: function() {
       return this.info[0].title.rendered
     },
     postContent: function() {
       return this.info[0].content.rendered
+    }
+  },
+  methods: {
+
+    getWindowWidth(event) {
+      this.windowWidth = document.documentElement.clientWidth
+    },
+    getWindowHeight(event) {
+      this.windowHeight = document.documentElement.clientHeight
     }
   }
 }
