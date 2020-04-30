@@ -43,7 +43,7 @@ export default {
   mounted() {
 
     this.draggableValue.handle = this.$refs[this.handleId];
-    const apiUrl = "http://soft-aspects-cms.soft-aspects.net/?rest_route=/wp/v2/posts"
+    const apiUrl = "https://soft-aspects-cms.soft-aspects.net/?rest_route=/wp/v2/posts"
     axios.get(apiUrl, { crossdomain: true })
       .then(response => {
         const res = response.data

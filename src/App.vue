@@ -8,16 +8,16 @@
 
   <prices id="prices-page" />
 
-  <div class="ig block red-bg" v-draggable="draggableValue_off_ig">
-    <span><em><a href="https://www.instagram.com/soft_aspects/">@soft_aspects</a></em></span>
-  </div>
-
   <!-- <blog/> -->
 
   <div class="video block" v-draggable="draggableValue_off_video">
     <div class="handler" :ref="handleId">
     </div>
     <iframe title="vimeo-player" src="https://player.vimeo.com/video/334798307" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="ig block red-bg" v-draggable="draggableValue_off_ig">
+    <span><em><a href="https://www.instagram.com/soft_aspects/">@soft_aspects</a></em></span>
   </div>
 
 </div>

@@ -41,7 +41,7 @@ export default {
     this.getWindowHeight()
   },
   mounted() {
-    const apiUrl = "http://soft-aspects-cms.soft-aspects.net/?rest_route=/wp/v2/pages"
+    const apiUrl = "https://soft-aspects-cms.soft-aspects.net/?rest_route=/wp/v2/pages"
     axios.get(apiUrl, {
         crossdomain: true
       })
