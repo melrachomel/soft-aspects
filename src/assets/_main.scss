@@ -20,7 +20,7 @@ $red: #f05656;
 // * {
 //     transition: all 0.1s ease-in;
 //     transition-property: all;
-//     transition-duration: 250ms;
+//     transition-duration: 100ms;
 //     transition-timing-function: ease-in;
 //     transition-delay: 0s;
 // }
@@ -34,49 +34,23 @@ body {
 }
 
 #site-logo {
-    position: absolute;
+    position: static;
     z-index: 9999;
-    // max-width: 500px;
+    width: 100%;
 }
 
 #app {
     font-family: serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #2c3e50;
-    background: #E6EA6B;
-    background: rgb(230,234,107);
-    background: linear-gradient(90deg, rgba(230,234,107,1) 0%, rgba(247,251,123,1) 18%, rgba(255,255,255,1) 100%);
-    height: 100vh;
-}
-
-.block {
-    position: absolute;
-    padding: 30px;
-    color: white;
-}
-
-//PAGES
-.about {
-    max-width: 25%;
-    top: 10%;
-    left: 20%;
-    z-index: 200;
-}
-
-.prices {
-    max-width: 25%;
-    top: 20%;
-    left: 30%;
-    z-index: 150;
+    background: black;
+    height: 200vh;
 }
 
 .ig {
-    top: 40%;
-    z-index: 9999;
-    opacity: 0.65;
+    padding: 5%;
     span {
-        font-size: 5em;
+        font-size: 2.5em;
         a {
             text-decoration: none;
             color: white;
@@ -84,24 +58,24 @@ body {
     }
 }
 
-.blog {
-    max-width: 25%;
-    top: 30%;
-    z-index: 100;
+.block {
+    position: static;
+    // padding: 10%;
+    color: white;
+    div {
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+    }
 }
 
 .video {
-    z-index: 50;
-    top: 40%;
-    left: 50%;
-
-    .handler {
-        position: absolute;
-        width: 640px;
-        height: 310px;
-    }
+  padding: 0;
+  iframe  {
+    width: 100%;
+  }
 }
-//END PAGES
 
 //BACKGROUNDS
 .purple-bg {
@@ -141,4 +115,67 @@ li {
 
 a {
     color: #42b983;
+}
+
+//MEDIA QUERIES
+@media screen and (min-width: 768px) {
+
+  #app {
+      color: #2c3e50;
+      background: #E6EA6B;
+      background: rgb(230,234,107);
+      background: linear-gradient(90deg, rgba(230,234,107,1) 0%, rgba(247,251,123,1) 18%, rgba(255,255,255,1) 100%);
+  }
+
+  .block {
+      position: absolute;
+      padding: 30px;
+  }
+
+  //PAGES
+  .about {
+      max-width: 25%;
+      top: 10%;
+      left: 20%;
+      z-index: 200;
+  }
+
+  .prices {
+      max-width: 25%;
+      top: 20%;
+      left: 30%;
+      z-index: 150;
+  }
+
+  .ig {
+      top: 40%;
+      z-index: 9999;
+      opacity: 0.65;
+      span {
+        font-size: 5em;
+      }
+  }
+
+  .blog {
+      max-width: 25%;
+      top: 30%;
+      z-index: 100;
+  }
+
+  .video {
+      iframe {
+        //from iframe
+        width: 640px;
+      }
+      z-index: 50;
+      top: 40%;
+      left: 50%;
+
+      .handler {
+          position: absolute;
+          width: 640px;
+          height: 310px;
+      }
+  }
+  //END PAGES
 }

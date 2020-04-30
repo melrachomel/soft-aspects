@@ -1,7 +1,8 @@
 <template>
 <div id="app">
-  <p style="position: absolute">{{windowWidth}} <br /> {{windowWidthDetector}}</p>
-  <img alt="Soft Aspects logo" id="site-logo" src="./assets/logo.png" v-draggable>
+
+  <span>{{windowWidthDetector}}</span>
+  <img alt="Soft Aspects logo" class="block" id="site-logo" src="./assets/logo.png" v-draggable="draggableValue_off_logo">
 
   <about id="about-page"/>
 
@@ -47,6 +48,9 @@ export default {
   data() {
     return {
       handleId: "handle-id",
+      draggableValue_off_logo: {
+        stopDragging: undefined,
+      },
       draggableValue_off_ig: {
         stopDragging: undefined,
       },
@@ -59,13 +63,11 @@ export default {
     };
   },
   created() {
-    console.log("~~~Vue lifecycle: created()~~~")
     //init
     this.getWindowWidth()
     this.getWindowHeight()
   },
   mounted() {
-    console.log("~~~Vue lifecycle: mounted()~~~")
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth)
       window.addEventListener('resize', this.getWindowHeight)
@@ -74,21 +76,29 @@ export default {
   },
   computed: {
     windowWidthDetector: function() {
+      const els = document.querySelectorAll(".block");
+
       if (this.windowWidth < 768) {
         // do a loop
-        // const els = document.querySelectorAll(".block");
-        // for (var i = 0; i < els.length; i++) {
-        //   // console.log(els[i]);
-        // }
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.position = "static"
+          els[i].style.width = "100%"
+          // els[i].style.maxWidth = "100%"
+        }
+        this.draggableValue_off_logo.stopDragging = true
         this.draggableValue_off_ig.stopDragging = true
         this.draggableValue_off_video.stopDragging = true
 
-        console.log(true, "window is LESS than 768")
       } else {
+        for (var i = 0; i < els.length; i++) {
+          els[i].style.position = ""
+          els[i].style.width = ""
+          // els[i].style.maxWidth = ""
+        }
+        this.draggableValue_off_logo.stopDragging = false
         this.draggableValue_off_ig.stopDragging = false
         this.draggableValue_off_video.stopDragging = false
 
-        console.log(false, "window is GREATER than 768")
       }
     },
   },

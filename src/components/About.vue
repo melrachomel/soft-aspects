@@ -36,7 +36,6 @@ export default {
     };
   },
   created() {
-    console.log("~~~Vue lifecycle: created()~~~")
     //init
     this.getWindowWidth()
     this.getWindowHeight()
@@ -70,10 +69,8 @@ export default {
         //   // console.log(els[i]);
         // }
         this.draggableValue_off_about.stopDragging = true
-        console.log(true, "window is LESS than 768")
       } else {
         this.draggableValue_off_about.stopDragging = false
-        console.log(false, "window is GREATER than 768")
       }
     },
     postTitle: function() {
