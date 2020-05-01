@@ -8,7 +8,9 @@
 
   <prices id="prices-page" />
 
-  <!-- <blog/> -->
+  <!-- <blog id="blog"/> -->
+
+  <booking id="booking"/>
 
   <div class="video block" v-draggable="draggableValue_off_video">
     <div class="handler" :ref="handleId">
@@ -28,6 +30,7 @@
 import about from './components/About'
 import prices from './components/Prices'
 import blog from './components/Blog'
+import booking from './components/Booking'
 
 // import axios from 'axios'
 import {
@@ -39,7 +42,8 @@ export default {
   components: {
     about,
     prices,
-    blog
+    blog,
+    booking
   },
   directives: {
     // drag,

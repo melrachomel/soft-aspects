@@ -9,6 +9,7 @@ $purple: #C5A5CB;
 $green: #7cf972;
 $orange: #F4C891;
 $red: #f05656;
+$indigo: #7c73ff;
 
 .clearfix {
     overflow: auto;
@@ -48,7 +49,7 @@ body {
 }
 
 .ig {
-    padding: 5%;
+    padding: 0;
     span {
         font-size: 2.5em;
         a {
@@ -62,8 +63,11 @@ body {
     position: static;
     // padding: 10%;
     color: white;
-    div {
-      padding: 30px;
+    // div {
+    //   padding: 30px;
+    // }
+    .wpsbc-legend-item-icon-color {
+      padding: 15px;
     }
     h1 {
       text-align: center;
@@ -74,6 +78,43 @@ body {
   padding: 0;
   iframe  {
     width: 100%;
+  }
+}
+
+//WP CUSTOM
+
+.wpsbc-calendar-wrapper {
+  table {
+     table-layout:fixed;
+  }
+}
+
+.wpforms-field.wpforms-field-hp {
+  display: none;
+}
+
+.wpforms-container {
+  margin-top: 10%;
+  div {
+    margin: 30px 0;
+  }
+  #wpforms-form-31 {
+    .wpforms-field-row-block {
+      margin: 15px 0;
+    }
+    .wpforms-field-label {
+      width: 100%;
+    }
+    label {
+      float: left;
+    }
+    input, textarea {
+      width: 100%;
+    }
+    textarea {
+      height: 100px;
+
+    }
   }
 }
 
@@ -92,6 +133,10 @@ body {
 
 .red-bg {
     background: $red;
+}
+
+.indigo-bg {
+   background: $indigo;
 }
 //END BACKGROUNDS
 
@@ -130,6 +175,9 @@ a {
   .block {
       position: absolute;
       padding: 30px;
+      div {
+        padding: 0;
+      }
   }
 
   //PAGES
@@ -151,13 +199,14 @@ a {
       top: 40%;
       z-index: 9999;
       opacity: 0.65;
+      padding: 5%;
       span {
-        font-size: 5em;
+        font-size: 4em;
       }
   }
 
   .blog {
-      max-width: 25%;
+      max-width: 100%;
       top: 30%;
       z-index: 100;
   }

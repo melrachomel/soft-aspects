@@ -2,38 +2,34 @@
 <div>
   <span>{{windowWidthDetector}}</span>
 
-  <div class="blog block orange-bg" v-for="post in posts" v-draggable="draggableValue_off_blog">
-    <small>{{post.date}}</small>
-    <h1>{{post.title.rendered}}</h1>
-    <div v-html="post.content.rendered"></div>
+  <div class="about block indigo-bg" v-draggable="draggableValue_off_booking">
+    <h1 v-if="info" v-html="postTitle"></h1>
+    <div v-if="info" v-html="postContent"></div>
+
   </div>
 </div>
 </template>
 
 <script>
-// import drag from '@branu-jp/v-drag'
 import axios from 'axios'
 import {
   Draggable
 } from 'draggable-vue-directive'
 
 export default {
-  name: 'Blog',
+  name: 'Booking',
   components: {
 
   },
   directives: {
-    // drag,
     Draggable,
   },
   data() {
     return {
-      draggableValue_off_blog: {
+      info: null,
+      draggableValue_off_booking: {
         stopDragging: undefined,
-        onPositionChange: this.onPosChanged
-
       },
-      posts: null,
       // draggable: true,
       windowWidth: 0,
       windowHeight: 0,
@@ -45,15 +41,19 @@ export default {
     this.getWindowHeight()
   },
   mounted() {
-
-    const apiUrl = "https://soft-aspects-cms.soft-aspects.net/?rest_route=/wp/v2/posts"
+    const apiUrl = "https://soft-aspects-cms.soft-aspects.net/?rest_route=/wp/v2/pages"
     axios.get(apiUrl, {
         crossdomain: true
       })
       .then(response => {
-        const res = response.data
-        this.posts = res
-        // console.log("posts: ", this.posts)
+        const posts = response.data
+        const sampleId = 33
+        // this.info = posts.filter(post => post.title.includes('About'))
+        // this.info = posts[0]
+        this.info = posts.filter((object) => {
+          return object.id === sampleId
+        })
+        // console.log(this.info[0].title.rendered)
       })
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth)
@@ -68,9 +68,9 @@ export default {
         // for (var i = 0; i < els.length; i++) {
         //   // console.log(els[i]);
         // }
-        this.draggableValue_off_blog.stopDragging = true
+        this.draggableValue_off_booking.stopDragging = true
       } else {
-        this.draggableValue_off_blog.stopDragging = false
+        this.draggableValue_off_booking.stopDragging = false
       }
     },
     postTitle: function() {
@@ -81,11 +81,7 @@ export default {
     }
   },
   methods: {
-    // leftPos: Math.floor(Math.random() * 100) + 1
-    onPosChanged: function(positionDiff, absolutePosition, event) {
-      console.log("left corner", absolutePosition.left);
-      console.log("top corner", absolutePosition.top);
-    },
+
     getWindowWidth(event) {
       this.windowWidth = document.documentElement.clientWidth
     },
@@ -96,10 +92,5 @@ export default {
 }
 </script>
 
-<style lang="css">
-.wpsbc-calendar-wrapper {
-  table {
-     table-layout:fixed;
-  }
-}
+<style lang="css" scoped>
 </style>
