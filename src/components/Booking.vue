@@ -26,7 +26,7 @@
           <textarea id="textarea-date" v-model="form.date" type="text" required placeholder="Date to book" />
         </label>
         <br>
-        <button type="submit" name="postform" @click="submitted">
+        <button type="submit" name="postform">
           Submit to book
         </button>
       </form>
@@ -129,7 +129,6 @@ export default {
           data
         )
         .then(res => {
-          console.log(res)
           this.sent = true;
         });
         this.form.name = "";
@@ -138,9 +137,6 @@ export default {
         this.form.date = "";
         document.getElementById('thankYou').innerHTML = '<p>Thanks! I\'ll be in touch shortly. </p>'
 
-    },
-    submitted(e) {
-      console.log("This fired!")
     },
     getWindowWidth(event) {
       this.windowWidth = document.documentElement.clientWidth
