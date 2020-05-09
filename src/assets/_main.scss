@@ -1,9 +1,7 @@
-
 //COMMON BREAKPOINTS
 $mobile: 768px;
 $laptop: 1366px;
 $desktop: 1680px;
-
 // COLOURS
 $purple: #C5A5CB;
 $green: #7cf972;
@@ -12,11 +10,10 @@ $red: #f05656;
 $indigo: #7c73ff;
 
 .clearfix {
-    overflow: auto;
-    clear: none;
-    width: 100%;
+  overflow: auto;
+  clear: none;
+  width: 100%;
 }
-
 // TRANSITION EVERYTHING
 // * {
 //     transition: all 0.1s ease-in;
@@ -25,206 +22,211 @@ $indigo: #7c73ff;
 //     transition-timing-function: ease-in;
 //     transition-delay: 0s;
 // }
-
 //CURSOR
 body {
-    margin: 0;
-    // cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewport='0 0 128 128' style='fill:black;font-size:68px;'><text y='50%'>🌛</text></svg>") 16 0,auto;
-    /*!emojicursor.app*/
+  margin: 0;
+  // cursor: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/happy.png"), auto;
+  // cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='128' height='128' viewport='0 0 128 128' style='fill:black;font-size:68px;'><text y='50%'>🌛</text></svg>") 16 0,auto;
+  /*!emojicursor.app*/
 }
 
 #site-logo {
-    position: static;
-    z-index: 9999;
-    width: 100%;
+  position: static;
+  z-index: 9999;
+  width: 100%;
 }
 
 #app {
-    font-family: serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: black;
-    height: 200vh;
+  font-family: serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+  height: 200vh;
 }
 
 .ig {
-    padding: 0;
-    span {
-        font-size: 2.5em;
-        a {
-            text-decoration: none;
-            color: white;
-        }
+  padding: 0;
+
+  span {
+    font-size: 2.5em;
+
+    a {
+      text-decoration: none;
+      color: white;
     }
+  }
 }
 
 .block {
-    position: static;
-    // padding: 10%;
-    color: white;
-    // div {
-    //   padding: 30px;
-    // }
-    .wpsbc-legend-item-icon-color {
-      padding: 15px;
-    }
-    h1 {
-      text-align: center;
-    }
+  position: static;
+  color: white;
+
+  .wpsbc-legend-item-icon-color {
+    padding: 10px;
+    margin-bottom: -15%;
+  }
+
+  h1 {
+    text-align: center;
+  }
 }
 
 .video {
   padding: 0;
-  iframe  {
+
+  iframe {
     width: 100%;
   }
 }
 
+.container {
+  padding: 10%;
+}
 //WP CUSTOM
 
-.wpsbc-calendar-wrapper {
-  table {
-     table-layout:fixed;
-  }
+.wpsbc-container {
+  padding: 0 10%;
 }
 
-.wpforms-field.wpforms-field-hp {
+.wpsbc-select-container {
   display: none;
 }
-
-.wpforms-container {
-  margin-top: 10%;
-  div {
-    margin: 30px 0;
-  }
-  #wpforms-form-31 {
-    .wpforms-field-row-block {
-      margin: 15px 0;
-    }
-    .wpforms-field-label {
-      width: 100%;
-    }
-    label {
-      float: left;
-    }
-    input, textarea {
-      width: 100%;
-    }
-    textarea {
-      height: 100px;
-
-    }
+.wpsbc-calendar-wrapper {
+  table {
+    table-layout: fixed;
+    width: 100%;
   }
 }
 
+#bookingform {
+  padding: 0 10% 10% 10%;
+  margin-top: 10%;
+  textarea {
+    height: 100px;
+  }
+  label {
+    margin-bottom: 10%;
+    float: left;
+  }
+  label,
+  input,
+  textarea {
+    width: 100%;
+  }
+}
 //BACKGROUNDS
 .purple-bg {
-    background: $purple;
+  background: $purple;
 }
 
 .green-bg {
-    background: $green;
+  background: $green;
 }
 
 .orange-bg {
-    background: $orange;
+  background: $orange;
 }
 
 .red-bg {
-    background: $red;
+  background: $red;
 }
 
 .indigo-bg {
-   background: $indigo;
+  background: $indigo;
 }
 //END BACKGROUNDS
-
 //TYPOGRAPHY
 h1,
 h2 {
-    font-weight: normal;
+  font-weight: normal;
 }
+
 p {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
+
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 li {
-    display: inline-block;
-    margin: 0 10px;
+  display: inline-block;
+  margin: 0 10px;
 }
 
 a {
-    color: #42b983;
+  color: #42b983;
 }
-
 //MEDIA QUERIES
 @media screen and (min-width: 768px) {
-
   #app {
-      color: #2c3e50;
-      background: #E6EA6B;
-      background: rgb(230,234,107);
-      background: linear-gradient(90deg, rgba(230,234,107,1) 0%, rgba(247,251,123,1) 18%, rgba(255,255,255,1) 100%);
+    color: #2c3e50;
+    background: #E6EA6B;
+    background: rgb(230,234,107);
+    background: linear-gradient(90deg, rgba(230,234,107,1) 0%, rgba(247,251,123,1) 18%, rgba(255,255,255,1) 100%);
   }
 
   .block {
-      position: absolute;
-      padding: 30px;
-      div {
-        padding: 0;
-      }
+    position: absolute;
+    padding: 30px;
+    div {
+      padding: 0;
+    }
+    h1 {
+      text-align: left;
+    }
+  }
+  //PAGES
+  .about, .booking {
+    max-width: 25%;
+    top: 10%;
+    left: 20%;
+    z-index: 200;
   }
 
-  //PAGES
-  .about {
-      max-width: 25%;
-      top: 10%;
-      left: 20%;
-      z-index: 200;
+  #bookingform {
+    padding: 0;
   }
 
   .prices {
-      max-width: 25%;
-      top: 20%;
-      left: 30%;
-      z-index: 150;
+    max-width: 25%;
+    top: 20%;
+    left: 30%;
+    z-index: 150;
   }
 
   .ig {
-      top: 40%;
-      z-index: 9999;
-      opacity: 0.65;
-      padding: 5%;
-      span {
-        font-size: 4em;
-      }
+    top: 40%;
+    z-index: 9999;
+    opacity: 0.65;
+    padding: 5%;
+
+    span {
+      font-size: 4em;
+    }
   }
 
   .blog {
-      max-width: 100%;
-      top: 30%;
-      z-index: 100;
+    max-width: 100%;
+    top: 30%;
+    z-index: 100;
   }
 
   .video {
-      iframe {
-        //from iframe
-        width: 640px;
-      }
-      z-index: 50;
-      top: 40%;
-      left: 50%;
+    iframe {
+      //from iframe
+      width: 640px;
+    }
+    z-index: 50;
+    top: 40%;
+    left: 50%;
 
-      .handler {
-          position: absolute;
-          width: 640px;
-          height: 310px;
-      }
+    .handler {
+      position: absolute;
+      width: 640px;
+      height: 310px;
+    }
   }
   //END PAGES
 }

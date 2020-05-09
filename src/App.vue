@@ -4,13 +4,13 @@
   <span>{{windowWidthDetector}}</span>
   <img alt="Soft Aspects logo" class="block" id="site-logo" src="./assets/logo.png" v-draggable="draggableValue_off_logo">
 
-  <about id="about-page"/>
+  <about id="about-page" />
 
   <prices id="prices-page" />
 
   <!-- <blog id="blog"/> -->
 
-  <booking id="booking"/>
+  <booking id="booking" />
 
   <div class="video block" v-draggable="draggableValue_off_video">
     <div class="handler" :ref="handleId">
@@ -19,7 +19,10 @@
   </div>
 
   <div class="ig block red-bg" v-draggable="draggableValue_off_ig">
-    <span><em><a href="https://www.instagram.com/soft_aspects/">@soft_aspects</a></em></span>
+    <div class="container">
+      <span><em><a href="https://www.instagram.com/soft_aspects/">@soft_aspects</a></em></span>
+    </div>
+
   </div>
 
 </div>
@@ -119,7 +122,5 @@ export default {
 </script>
 
 <style lang="scss">
-
 @import './assets/_main.scss'
-
 </style>

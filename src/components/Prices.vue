@@ -3,8 +3,12 @@
   <span>{{windowWidthDetector}}</span>
 
   <div class="prices block green-bg" v-draggable="draggableValue_off_prices">
+    <div class="container">
+
     <h1 v-if="info" v-html="postTitle"></h1>
     <div v-if="info" v-html="postContent"></div>
+  </div>
+
   </div>
 </div>
 </template>

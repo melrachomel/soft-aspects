@@ -3,9 +3,10 @@
   <span>{{windowWidthDetector}}</span>
 
   <div class="blog block orange-bg" v-for="post in posts" v-draggable="draggableValue_off_blog">
-    <small>{{post.date}}</small>
-    <h1>{{post.title.rendered}}</h1>
-    <div v-html="post.content.rendered"></div>
+    <div class="container"><small>{{post.date}}</small>
+      <h1>{{post.title.rendered}}</h1>
+      <div v-html="post.content.rendered"></div>
+    </div>
   </div>
 </div>
 </template>

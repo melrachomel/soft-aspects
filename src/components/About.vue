@@ -3,9 +3,10 @@
   <span>{{windowWidthDetector}}</span>
 
   <div class="about block purple-bg" v-draggable="draggableValue_off_about">
-    <h1 v-if="info" v-html="postTitle"></h1>
-    <div v-if="info" v-html="postContent"></div>
-
+    <div class="container">
+      <h1 v-if="info" v-html="postTitle"></h1>
+      <div v-if="info" v-html="postContent"></div>
+    </div>
   </div>
 </div>
 </template>
