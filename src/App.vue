@@ -75,13 +75,18 @@ export default {
     this.getWindowHeight()
   },
   mounted() {
+    //For mobile, detect when in mobile
     this.$nextTick(function() {
       window.addEventListener('resize', this.getWindowWidth)
       window.addEventListener('resize', this.getWindowHeight)
-
     })
+
+    //For GA track home
+    this.$ga.page('/');
+
   },
   computed: {
+    //For mobile, detect all .block divs and force static to prevent draggable directive
     windowWidthDetector: function() {
       const els = document.querySelectorAll(".block");
 
