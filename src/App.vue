@@ -9,7 +9,7 @@
     <p>I offer chart readings, transit (forecast) readings, and relationship readings. My focus is on using astrology as a source of empathy for ourselves, and for strengthening our emotional capacity. I believe that astrology’s unique ability to
       accurately describe the human psyche offers an opportunity for us to take greater responsibility for our words and actions. I am particularly interested in astrology as a descriptor of the psychological weather we are collectively facing.</p>
 
-    <p>My astrological work is informed by my ongoing artistic practice as a choreographer, regular research, and my extensive study with Toronto-based astrologer Julia Beyer.</p>
+    <p>My astrological work is informed by my ongoing artistic practice as a choreographer, my regular research, and my extensive study with Toronto-based astrologer Julia Beyer.</p>
 
     <a href="mailto:ehrhardta@gmail.com">Email me</a>
 
