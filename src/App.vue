@@ -19,7 +19,7 @@
   <div class="prices block green-bg" v-draggable>
     <h1>Prices</h1>
     <p>1 hour <br />
-      Sliding scale $40 - $65</p>
+      Sliding scale $45 - $65</p>
 
     <p>In a one-hour reading we go over the major thematics of your natal chart, focusing on your sun, moon, and ascendant, and the planets that aspect them.</p>
 
@@ -29,7 +29,7 @@
     <p>In a 1.5 hour reading we do all of the above with either a dive into the outer planets or a brief look at your upcoming year of astrology.</p>
 
     <p>2 hours<br>
-      Sliding scale $110 - $125</p>
+      Sliding scale $115 - $175</p>
 
     <p>In a 2 hour reading we go over the major thematics of your natal chart, look deeply into the relationships between outer and inner planets, and go over a forecast of your upcoming year of astrology.</p>
     </p>
